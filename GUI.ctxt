@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=GUI
 comment1.params=
-comment1.target=void\ paintTest()
-comment2.params=g
-comment2.target=void\ paint(java.awt.Graphics)
-numComments=3
+comment1.target=void\ Main()
+comment2.params=
+comment2.target=void\ canvas()
+comment3.params=g
+comment3.target=void\ paint(java.awt.Graphics)
+numComments=4

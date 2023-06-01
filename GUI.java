@@ -7,13 +7,21 @@ import java.awt.event.*;
 public class GUI extends JFrame{
    public newBlock Block;
    private final int BLOCK_WIDTH =100, BLOCK_HEIGHT=100;
-   private int[][] tempArray=new int [4][4];
-   public void paintTest(){
-Block= new newBlock("block","purple",5);
+   private newBlock[][] tempArray=new newBlock [4][4];
+ 
+   
+   public void Main(){
+    Block= new newBlock("block","purple",5);
+tempArray[3][3]=Block;
+tempArray[3][0]=new newBlock("space",null,0);
+    }
+   public void canvas(){
+
         setTitle("2D graphics");
-        System.out.println(Block.blockColor());
-         System.out.println(Block.blockValue());
-          System.out.println(Block.isBlock());
+      
+        System.out.println(tempArray[3][3].blockColor());
+         System.out.println(tempArray[3][3].blockValue());
+          System.out.println(tempArray[3][3].isBlock());
         this.getContentPane().setPreferredSize(new Dimension(500,500));
         this.getContentPane().setLayout(null); 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -21,6 +29,10 @@ Block= new newBlock("block","purple",5);
         this.setVisible(true);
        
     }
+    
+    
+    
+    
     public void paint(Graphics g){
         // super.paint(g);
         // Graphics2D g2 = (Graphics2D) g;
