@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=newBlock
+comment1.params=type\ color\ value
+comment1.target=newBlock(java.lang.String,\ java.lang.String,\ int)
+comment1.text=\ \r\n\ \ The\ constructor\ for\ my\ blocks\ \r\n\ \ \ \r\n\ \ \ \r\n\ \ \ \ \r\n
+comment2.params=
+comment2.target=int\ blockValue()
+comment3.params=
+comment3.target=java.lang.String\ blockColor()
+comment4.params=
+comment4.target=boolean\ isBlock()
+numComments=5
