@@ -12,32 +12,70 @@ public class GUI extends JFrame{
 
         int prevX=5, prevY=5;
         //Method for spawning in 2 new blocks at the start of the game, and makes sure that the objects do not generate in the same square.
-        Block= new newBlock("block",2);
+        for (int j=0; j<3; j++){
+            for (int i=0; i<3; i++){
+
+                blockArray[i][j]=new newBlock("space", 0);
+
+            }
+        }
+        
         for (int i=0; i<2; i++){
             int blockX= GameEngine.randomInt(0,3), blockY = GameEngine.randomInt(0,3);
             while(prevX==blockX && prevY==blockY){
-            blockX= GameEngine.randomInt(0,3);
-            blockY = GameEngine.randomInt(0,3);
-            System.out.println("Epic fail");
+                blockX= GameEngine.randomInt(0,3);
+                blockY = GameEngine.randomInt(0,3);
+                System.out.println("Epic fail");
             }
             System.out.println ("X is "+blockX+" Y is "+blockY);
             blockArray[blockX][blockY]=new newBlock("block", GameEngine.blockChance());
             prevX=blockX;  prevY=blockY;
             System.out.println("Block at"+blockX+ " "+blockY);
         }
+        
+        for (int j=0; j<3; j++){
+            for (int i=0; i<3; i++){
+
+                if( blockArray[i][j].isBlock()){
+                    System.out.print(blockArray[i][j].getValue());
+                }
+                else System.out.println("X");
+
+            }
+            System.out.println();
+        }
+
     }
+
     public void spawnBlock(){
-    
-    
+
+        int spawnX; 
+        int spawnY;
+        boolean blockSpawned=false;
+
+        do{
+            spawnX=GameEngine.randomInt(0,3);
+            spawnY = GameEngine.randomInt(0,3);
+
+            if(blockArray[spawnX][spawnY].isBlock()){
+                spawnX=GameEngine.randomInt(0,3);
+                spawnY=GameEngine.randomInt(0,3);
+
+            }
+            else{
+                System.out.println("Yo do this work?");
+                blockArray[spawnX][spawnY]=new newBlock("block", GameEngine.blockChance());
+                blockSpawned=true;
+                System.out.println(spawnX+" is the X coord"+"And "+spawnY+"Is the Y coord");
+            }
+
+        }while (blockSpawned=false);
+
     }
 
     public void canvas(){
         setTitle("2D graphics");
 
-        System.out.println(Block.getRed());
-        System.out.println(Block.getGreen());
-        System.out.println(Block.getBlue());
-        System.out.println(Block.isBlock());
         this.getContentPane().setPreferredSize(new Dimension(500,500));
         this.getContentPane().setLayout(null); 
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);

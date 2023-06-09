@@ -43,7 +43,7 @@ public class GameEngine {
             return answer;
         } else {return askForInt(question, min, max);}
     } 
-
+    //method that returns one of 2 spawnable tile values with a 1/10 chance of the tile being a 4, otherwise 2.
     public static int blockChance(){
         int blockValue=0;
         double random=10*Math.random();
