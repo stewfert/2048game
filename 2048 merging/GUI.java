@@ -9,32 +9,34 @@ public class GUI extends JFrame{
     private final int BLOCK_WIDTH =100, BLOCK_HEIGHT=100;
     private newBlock[][] blockArray=new newBlock [4][4];
     public void gameMethod(){
+//set a time delay to a method
+        
+        // try{
 
+    // Thread.sleep(500); 
+// }
+// catch(InterruptedException ex){
+
+ // ex.printStackTrace();
+// }
+        
         //fills the array with empty spaces.
         for (int j=0; j<4; j++){
             for (int i=0; i<4; i++){
 
                 blockArray[i][j]=new newBlock("space", 0);
-
+   
             }
         }
         //spawns 2 new blocks at the start of the game.
-        spawnBlock();
-        spawnBlock();
+      //  spawnBlock();
+       //spawnBlock();
+       //testing merge cases, need to change merge method to to read from back to front and not merge blocks twice.
+blockArray[1][1]=new newBlock("block", 2);
+blockArray[2][1]=new newBlock("block", 2);
+blockArray[3][1]=new newBlock("block", 4);
 
-        //Outdated code for spawning new blocks, spawnBlock method does all this. 
-        // for (int i=0; i<2; i++){
-        // int blockX= GameEngine.randomInt(0,3), blockY = GameEngine.randomInt(0,3);
-        // while(prevX==blockX && prevY==blockY){
-        // blockX= GameEngine.randomInt(0,3);
-        // blockY = GameEngine.randomInt(0,3);
-        // System.out.println("Epic fail");
-        // }
-        // System.out.println ("X is "+blockX+" Y is "+blockY);
-        // blockArray[blockX][blockY]=new newBlock("block", GameEngine.blockChance());
-        // prevX=blockX;  prevY=blockY;
-        // System.out.println("Block at"+blockX+ " "+blockY);
-        // }
+
     }
 
     public void mergeBlocks(int dX, int dY){
