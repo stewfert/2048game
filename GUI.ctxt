@@ -1,9 +1,19 @@
 #BlueJ class context
 comment0.target=GUI
 comment1.params=
-comment1.target=void\ Main()
-comment2.params=
-comment2.target=void\ canvas()
-comment3.params=g
-comment3.target=void\ paint(java.awt.Graphics)
-numComments=4
+comment1.target=void\ gameMethod()
+comment2.params=Xpressed\ posDirection
+comment2.target=void\ mergeBlocks(boolean,\ boolean)
+comment3.params=up\ down\ left\ right
+comment3.target=void\ moveBlocks(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment4.params=
+comment4.target=void\ printTesting()
+comment5.params=
+comment5.target=void\ mergePrintTesting()
+comment6.params=
+comment6.target=void\ spawnBlock()
+comment7.params=
+comment7.target=void\ canvas()
+comment8.params=g
+comment8.target=void\ paint(java.awt.Graphics)
+numComments=9
