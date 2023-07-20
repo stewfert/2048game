@@ -32,12 +32,23 @@ public class GUI extends JFrame{
             }
         }
         //spawns 2 new blocks at the start of the game.
-        spawnBlock();
-        spawnBlock();
+       blockArray[0][1]=new newBlock("block", 4);
+       blockArray[0][2]=new newBlock("block", 2);
+       blockArray[0][3]=new newBlock("block", 2);
         printTesting();
     }
     //this method takes the input of a direction (X and Y) where only 1 direction at a time can be not equal to zero. 
     //This integer controls what direction the method parses through the 2d block array and compares blocks if they can be merged (same value over 0). 
+    public void runTurn(boolean xPressed, boolean posDirection){
+    moveBlocks(xPressed, posDirection);
+    mergeBlocks(xPressed, posDirection); 
+    moveBlocks(xPressed, posDirection);
+    spawnBlock();
+    loseCheck();
+    printTesting();
+    System.out.println("your score is "+Score.getScore());
+    }
+    
     public void mergeBlocks(boolean Xpressed, boolean posDirection){
         int parseFromX=0, parseFromY=0;
         int dX=0, dY=0;
@@ -95,15 +106,17 @@ public class GUI extends JFrame{
                     //flagged blocks are now merged together and then the resultant block is flagged to not be merged again. Other block becomes an empty space.
                     if(blockArray[i][j].getValue()==blockArray[i+xCheck][j+yCheck].getValue() 
                     && blockArray[i][j].isBlock()
-                    && blockArray[i+xCheck][j+yCheck].canMerge()==false){
+                    && blockArray[i+xCheck][j+yCheck].canMerge()==true
+                    && blockArray[i][j].canMerge()==true) {
                         //adds the merged block's value to the curent score. 
-                        score.setScore((2*blockArray[i][j].getValue())+score.getScore());
+                        Score.setScore((2*blockArray[i][j].getValue())+Score.getScore());
                         //Creates our resultant block and deletes the previous ones.
                        blockArray[i+xCheck][j+yCheck]= new newBlock("block",(2*blockArray[i][j].getValue()));
-                       blockArray[i+xCheck][j+yCheck].blockMerged();
+                       
                        newSpace(i,j);
                         System.out.println("MARGED!!!");
-                        
+                        blockArray[i+xCheck][j+yCheck].blockMerged();
+                      
                     }
                     //For boundary cases caused by our parsing outside the array.
                 } catch(ArrayIndexOutOfBoundsException e){
@@ -111,7 +124,7 @@ public class GUI extends JFrame{
                 }
             }
         }
-        
+        System.out.println("AMONG US");
         //removes the blockMerged property from each block so that they can remerge after a move. 
         resetMerges();
     }
@@ -137,7 +150,7 @@ public class GUI extends JFrame{
 
     }
 
-    public boolean checkAdjacentBlocks() {
+    public boolean loseCheck() {
         int dX = 1, dY = 1;
 
        

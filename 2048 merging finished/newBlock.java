@@ -6,7 +6,7 @@ public class newBlock{
     private String type; 
     private Color blockColor;
     private boolean isBlock=false;
-private boolean mergeFlagged=false;
+private boolean mergeFlagged=true;
     /* 
     The constructor for my blocks 
 
@@ -45,10 +45,10 @@ private boolean mergeFlagged=false;
     this.blockValue=value;
     }
     public void setForMerge(){
-    this.mergeFlagged=false;
+    this.mergeFlagged=true;
     }
     public void blockMerged(){
-    this.mergeFlagged=true;
+    this.mergeFlagged=false;
     }
     
     public boolean canMerge(){
