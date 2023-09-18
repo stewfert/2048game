@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=GameEngine
+comment1.params=message
+comment1.target=void\ println(java.lang.String)
+comment2.params=message
+comment2.target=void\ print(java.lang.String)
+comment3.params=message
+comment3.target=java.lang.String\ askForString(java.lang.String)
+comment4.params=min\ max
+comment4.target=int\ randomInt(int,\ int)
+comment5.params=question\ min\ max
+comment5.target=int\ askForInt(java.lang.String,\ int,\ int)
+comment6.params=
+comment6.target=int\ blockChance()
+comment7.params=
+comment7.target=void\ clear()
+numComments=8
